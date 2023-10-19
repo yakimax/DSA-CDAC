@@ -1,13 +1,16 @@
 package Day1.FactorialOfN ;
+import java.util.* ;
 public class Main {
-    static int fibonacci(int idx){ 
-        if( idx <= 2 ){
+    static int factorial(int idx){
+        if( idx == 0 ){
             return 1 ;
-        }
-        return fibonacci(idx-1)+fibonacci(idx-2)  ;
+        } 
+        int val = idx * factorial(idx-1) ;
+        return val ; 
     }
     public static void main(String[] args) {
-        int val = fibonacci(5) ;
-        System.out.println(val) ;
+        Scanner scn = new Scanner(System.in) ;
+        int n = scn.nextInt( ) ;
+        System.out.println(factorial(n)) ;
     }
 }
