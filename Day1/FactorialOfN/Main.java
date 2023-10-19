@@ -1,5 +1,6 @@
 package Day1.FactorialOfN ;
 import java.util.* ;
+
 public class Main {
     static int factorial(int idx){
         if( idx == 0 ){
