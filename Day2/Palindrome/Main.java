@@ -17,7 +17,7 @@ public class Main {
         
         return a ;
     } 
-
+    
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in) ;
         String s = scn.nextLine() ;
