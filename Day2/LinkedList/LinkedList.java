@@ -25,10 +25,7 @@ class Node {
     }
     void setData( int val ) {
         this.data = val ;
-    }
-    void nextNode(Node node) {
-        this.node = node ; 
-    }
+    } 
 }
 
 public class LinkedList {
@@ -79,5 +76,5 @@ public class LinkedList {
              
         }
     }
-    
+
 }
