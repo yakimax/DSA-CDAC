@@ -34,7 +34,7 @@ public class LinkedList {
     Node tail = null ;
     int size = 0 ;
 
-    void addFirst ( int val ) {
+    public void addFirst ( int val ) {
         if( head != null ) {
             System.out.println("Head already Exist") ;
         }else{ 
@@ -45,7 +45,7 @@ public class LinkedList {
         }
     }
 
-    void addLast ( int val ) {
+    public void addLast ( int val ) {
         if( tail != null ) {
             addNode(val) ;
         }else{ 
@@ -53,21 +53,21 @@ public class LinkedList {
         }
     }
 
-    Node getFirst () throws NodeNotFound{
+    public Node getFirst () throws NodeNotFound{
         if( head != null ){ 
             return head ;
         }
         throw new NodeNotFound() ;
     }
 
-    Node getLast() throws NodeNotFound{
+    public Node getLast() throws NodeNotFound{
         if( tail != null ){ 
             return tail ;  
         }
         throw new NodeNotFound() ;
     }
 
-    void addNode ( int val ) {
+    public void addNode ( int val ) {
         if ( head == null ) {
             addFirst(val) ;
         } else {
@@ -78,8 +78,18 @@ public class LinkedList {
         }
     }
     
-    int size(){
+    public int size(){
         return size ;
     }
 
+    public void displayList (){
+        Node temp = head ;
+        while(temp != null){
+            System.out.print(temp.data + " -> ") ;
+            if(temp.next == null){
+                System.out.print("NULL") ;     
+            }
+            temp = temp.next ;
+        }
+    }
 }
