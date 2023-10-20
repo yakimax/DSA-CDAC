@@ -1,16 +1,16 @@
 package Day2.LinkedList ;
 
-class NodeNotFound extends Exception{
+class NodeNotFound extends Exception {
     public String toString(){
         return "NodeNotFound" ;
     }
-}
-
+} 
 
 
 class Node {
     int data ;
-    Node node ;
+    Node next ;
+
     Node(){}
     Node (int val ){
         this.data = val ;
@@ -18,39 +18,38 @@ class Node {
     Node (Node node ){
         this.node = node ;
     }
-    
     Node (int val ,Node node ){
         this.data = val ;
         this.node = node ;
     }
+    
     void setData( int val ) {
         this.data = val ;
-    } 
+    }
 }
+
 
 public class LinkedList {
     Node head = null ;
     Node tail = null ;
     int size = 0 ;
 
-
     void addFirst ( int val ) {
         if( head != null ) {
-
+            System.out.println("Head already Exist") ;
         }else{ 
             Node node = new Node(val) ;
             head = node ;
+            tail = node ;
             size++ ;
         }
     }
 
     void addLast ( int val ) {
-        if( head != null ) {
-
+        if( tail != null ) {
+            addNode(val) ;
         }else{ 
-            Node node = new Node(val) ;
-            head = node ;
-            size++ ;
+            addFirst(val) ;
         }
     }
 
@@ -69,12 +68,18 @@ public class LinkedList {
     }
 
     void addNode ( int val ) {
-        if( head != null ) {
-            System.out.println( "Head already exist" ) ;
+        if ( head == null ) {
+            addFirst(val) ;
+        } else {
+            Node node = new Node(val) ;
+            tail.next = node ;
+            tail = tail.next ;
+            size++ ;
         }
-        if( head == null ) {
-             
-        }
+    }
+    
+    int size(){
+        return size ;
     }
 
 }
