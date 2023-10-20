@@ -1,7 +1,5 @@
-package Day2.Palindrome;
-
-import java.util.*;
-
+package Day2.Palindrome ;
+import java.util.* ;
 
 
 public class Main {
@@ -19,8 +17,9 @@ public class Main {
     } 
     
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in) ;
-        String s = scn.nextLine() ;
-        System.out.println( palindrome(s) ) ;
+        try (Scanner scn = new Scanner(System.in)) {
+            String s = scn.nextLine() ;
+            System.out.println( palindrome(s) ) ;
+        }
     }
 }
