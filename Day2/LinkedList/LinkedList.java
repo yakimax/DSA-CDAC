@@ -16,11 +16,11 @@ class Node {
         this.data = val ;
     }
     Node (Node node ){
-        this.node = node ;
+        this.next = node ;
     }
     Node (int val ,Node node ){
         this.data = val ;
-        this.node = node ;
+        this.next = node ;
     }
     
     void setData( int val ) {
