@@ -11,7 +11,7 @@ public class Main {
         list.addNode(40) ;
         list.addNode(80) ;
         list.addNode(70) ;
-        list.insertNode(6,500) ;
+        list.insertNode(7,500) ;
         list.displayList() ;
     }
 }

@@ -78,15 +78,16 @@ public class LinkedList {
     }
     
     public void insertNode(int afterIdx,int val) {
-        Node temp = head ;
-        int index = 1 ;
-        while ( temp.next != null && index != afterIdx ) {
-            temp = temp.next ;
-            index++ ;
-        }
+        
         if(tail == null || size < afterIdx ) {
             System.out.println(" Invalid " ) ;
         }else{ 
+            Node temp = head ;
+            int index = 1 ;
+            while ( temp.next != null && index != afterIdx ) {
+                temp = temp.next ;
+                index++ ;
+            }
             Node node = new Node(val) ;
             Node temp2 = temp.next ;
             temp.next = node ;
