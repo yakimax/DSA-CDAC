@@ -78,6 +78,12 @@ public class LinkedList {
         }
     }
     
+    public void insertNode(int afterIdx,int val) {
+        if(t){
+
+        }
+    }
+
     public int size(){
         return size ;
     }
