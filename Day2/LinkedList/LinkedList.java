@@ -4,8 +4,7 @@ class NodeNotFound extends Exception {
     public String toString(){
         return "NodeNotFound" ;
     }
-} 
-
+}
 
 class Node {
     int data ;
@@ -80,17 +79,22 @@ public class LinkedList {
     
     public void insertNode(int afterIdx,int val) {
         Node temp = head ;
-        int index = 0 ;
+        int index = 1 ;
         while ( temp.next != null && index != afterIdx ) {
             temp = temp.next ;
             index++ ;
         }
-        if(tail){
-
+        if(tail == null || size < afterIdx ) {
+            System.out.println(" Invalid " ) ;
+        }else{ 
+            Node node = new Node(val) ;
+            Node temp2 = temp.next ;
+            temp.next = node ;
+            node.next = temp2 ;
         }
     }
 
-    public int size(){
+    public int size() {
         return size ;
     }
 
