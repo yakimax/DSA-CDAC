@@ -79,7 +79,13 @@ public class LinkedList {
     }
     
     public void insertNode(int afterIdx,int val) {
-        if(t){
+        Node temp = head ;
+        int index = 0 ;
+        while ( temp.next != null && index != afterIdx ) {
+            temp = temp.next ;
+            index++ ;
+        }
+        if(tail){
 
         }
     }
