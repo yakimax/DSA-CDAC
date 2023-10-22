@@ -77,8 +77,7 @@ public class LinkedList {
         }
     }
     
-    public void insertNode(int afterIdx,int val) {
-        
+    public void insertNode(int afterIdx,int val) { 
         if(tail == null || size < afterIdx ) {
             System.out.println(" Invalid " ) ;
         }else{ 
@@ -93,6 +92,7 @@ public class LinkedList {
             temp.next = node ;
             node.next = temp2 ;
         }
+
     }
 
     public int size() {
