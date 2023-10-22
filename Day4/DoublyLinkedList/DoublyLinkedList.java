@@ -8,7 +8,7 @@ class Node {
         this.prev = null ;
     }
     Node ( int data ) {
-        
+        this.data = data ;
     }
 }
 
@@ -18,6 +18,6 @@ public class DoublyLinkedList {
     Node tail ;
     int size ;
     void  addFirst ( int val ) {
-
+        
     }
 }
