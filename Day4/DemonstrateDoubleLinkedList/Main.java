@@ -1,4 +1,4 @@
-package Day4.PracticeDoubleLinkedList ;
+package Day4.DemonstrateDoubleLinkedList ;
 
 import Day4.DoublyLinkedList.DoublyLinkedList ;
 
