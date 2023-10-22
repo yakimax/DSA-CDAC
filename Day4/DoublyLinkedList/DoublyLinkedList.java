@@ -42,11 +42,11 @@ public class DoublyLinkedList {
 
     void addNodeAt ( int idx , int val ) {
         Node node = new Node(val) ;
-        if( head == null || idx == 0 ) {
+        if ( head == null || idx == 0 ) {
             addFirst(val) ;
-        }else if (idx == size) {
+        } else if ( idx == size ) {
              addLast(val) ;
-        }else {
+        } else {
             Node temp = head ;
             while( idx > 1 ) {
                 idx-- ;
@@ -57,6 +57,14 @@ public class DoublyLinkedList {
             node.prev = temp ;
             node.next = after ;
             after.prev = node ;
+        }
+    }
+
+    void deleteFirst () {
+        if ( head  == null ) {
+            System.out.println(" Empty linkedlist " ) ;
+        } else {
+            head = head.next ;
         }
     }
 }
