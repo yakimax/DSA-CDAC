@@ -18,6 +18,7 @@ public class DoublyLinkedList {
     Node head = null ;
     Node tail = null ;
     int size ;
+    
  
     public void  addFirst ( int val ) { 
         Node node = new Node(val) ;
