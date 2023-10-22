@@ -1,5 +1,6 @@
 package Day4.DoublyLinkedList ;
 
+
 class Node {
     int data ;
     Node next ,prev ;
@@ -18,7 +19,7 @@ public class DoublyLinkedList {
     Node tail = null ;
     int size ;
  
-    void  addFirst ( int val ) { 
+    public void  addFirst ( int val ) { 
         Node node = new Node(val) ;
             if ( head == null ) { 
                 head = tail = node ; 
@@ -27,20 +28,24 @@ public class DoublyLinkedList {
                 head.prev = node ;
                 head = node ;
             }
+        size++ ;
     }
 
-    void addLast ( int val ) {
-        Node node = new Node() ;
+
+    public void addLast ( int val ) {
+        Node node = new Node(val) ;
         if (tail == null) {
             addFirst(val) ;
         }else {
             tail.next = node ;
             node.prev = tail ;
             tail = node ;
+            size++ ;
         }
     }
-
-    void addNodeAt ( int idx , int val ) {
+    
+    
+    public void insertNode ( int idx , int val ) {
         Node node = new Node(val) ;
         if ( head == null || idx == 0 ) {
             addFirst(val) ;
@@ -57,14 +62,66 @@ public class DoublyLinkedList {
             node.prev = temp ;
             node.next = after ;
             after.prev = node ;
+            size++ ; 
         }
     }
 
-    void deleteFirst () {
+
+    public void deleteFirst () {
         if ( head  == null ) {
             System.out.println(" Empty linkedlist " ) ;
         } else {
             head = head.next ;
+            head.prev = null ;
         }
+    }
+
+
+    public void deleteLast () {
+        if ( tail  == null ) {
+            System.out.println(" Empty linkedlist " ) ;
+        } else {
+            tail = tail.prev ;
+            tail.next = null ;
+        }
+    }
+
+    
+    public void deleteNode(int idx){
+        if( head == null ){
+            System.out.println("Empty list") ; 
+        } else if ( idx > size ) {
+            System.out.println("Invalid") ;
+        } else if (size==idx) {
+            deleteLast();
+        } else { 
+            Node temp = head ;
+            while (idx > 1) {
+                idx++ ;
+                temp = temp.next ;
+            } 
+            temp.next = temp.next.next ;
+            temp.next.prev = temp ;
+        }
+    }
+
+    
+    public void displayList(){
+        Node temp = head ;
+        while ( temp != null ) {
+            System.out.print(temp.data + "->") ;
+            temp = temp.next ;
+        }
+        System.out.println("null" ) ;
+    }
+    
+    
+    public void displayListReverse(){
+        Node temp = tail ;
+        while ( temp != null ) {
+            System.out.print( temp.data + "->"  ) ;
+            temp = temp.prev ;
+        }
+        System.out.print ("null" ) ;
     }
 }
