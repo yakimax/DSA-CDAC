@@ -15,5 +15,4 @@ Time Complexity order (↑)
             ->   O(n.log(n))
             ->   O(n³)
             ->   O(2ⁿ)
-            ->   O(nⁿ)
-
+            ->   O(nⁿ) 
