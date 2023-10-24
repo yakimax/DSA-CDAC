@@ -42,19 +42,23 @@ public class Tree {
         int i = 0 ;
         st.push ( new Pair(root,0) ) ;
         while ( st.size() > 0 ) {
-            Pair p = st.pop() ;
+            if( arr[i] == 0 ) {
+                i++ ;
+                continue ;
+            }
+            Pair p = st.peek() ;
             if ( p.stage == 0 ) {
                 p.stage++ ;
                 Node temp = new Node( arr[i++] ) ;
                 p.node.left = temp ;
-                st.push(p) ;
+                st.push( new Pair(temp,0) ) ;
             } else if ( p.stage == 1 ) {
                 p.stage++ ;
                 Node temp = new Node( arr[i++] ) ;
                 p.node.right = temp ;
-                st.push(p) ;
+                st.push( new Pair(temp,0) ) ;
             } else {
-                
+                st.pop() ;
             }
         }
     }
