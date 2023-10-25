@@ -14,15 +14,15 @@ class Node {
 
 public class BST {
     Node root ;
-    BST ( ){
+    public BST ( ){
         root = new Node ( ) ;
     }
 
-    Node insertdata(Node root, int key)
+    public Node insertdata(Node root, int key)
 	{
 		if(root == null)
 		{
-			root = new Node(key) ;
+			// root = new Node(key) ;
 			return root ;
 		}
 		if(key <= root.data){
