@@ -1,8 +1,8 @@
 package Day7.DemonstrateBST ;
-import Day7.BinarySearchTree.* ;
+import Day6.BinarySearchTree.*;
 public class Main {
     public static void main(String[] args) {
         BST bt = new BST( ) ;  
-        bt.root = insertdata() ;
+        bt.insertdata() ;
     }
 }

@@ -1,4 +1,4 @@
-package Day7.BinarySearchTree ;
+package Day6.BinarySearchTree ;
 
 class Node {
     Node left , right ;
@@ -15,14 +15,14 @@ class Node {
 public class BST {
     Node root ;
     public BST ( ){
-        root = new Node ( ) ;
+        this.root = new Node ( ) ;
     }
 
     public Node insertdata(Node root, int key)
 	{
 		if(root == null)
 		{
-			// root = new Node(key) ;
+			root = new Node(key) ;
 			return root ;
 		}
 		if(key <= root.data){
