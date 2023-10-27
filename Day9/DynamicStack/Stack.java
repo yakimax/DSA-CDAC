@@ -1,9 +1,6 @@
 package Day9.DynamicStack ;
 
-import Day2.LinkedList.* ;
-
- 
-
+import Day2.LinkedList.* ; 
 
 public class Stack {
     LinkedList l = new LinkedList() ;
