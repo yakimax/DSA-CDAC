@@ -50,7 +50,9 @@ public class LinkedList {
 
     public Node removeLast () {
         if ( head == tail ) {
+            Node last = tail ;
             head = tail = null ;
+            return last ;
         }
         Node temp = head ;
         while(temp.next.next != null) {
@@ -58,6 +60,7 @@ public class LinkedList {
         }
         Node last = temp.next ;
         temp.next = null ;
+        tail = temp ;
         return last ;
     }
 
