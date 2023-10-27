@@ -1,4 +1,5 @@
 package Day2.LinkedList ;
+import Day2.LinkedList .* ;
 
 class NodeNotFound extends Exception {
     public String toString(){
@@ -6,26 +7,7 @@ class NodeNotFound extends Exception {
     }
 }
 
-class Node {
-    int data ;
-    Node next ;
-
-    Node(){}
-    Node (int val ){
-        this.data = val ;
-    }
-    Node (Node node ){
-        this.next = node ;
-    }
-    Node (int val ,Node node ){
-        this.data = val ;
-        this.next = node ;
-    }
-    
-    void setData( int val ) {
-        this.data = val ;
-    }
-}
+ 
 
 
 public class LinkedList {
@@ -52,18 +34,31 @@ public class LinkedList {
         }
     }
 
-    public Node getFirst () throws NodeNotFound{
+    public Node getFirst () throws NodeNotFound {
         if( head != null ){ 
             return head ;
         }
         throw new NodeNotFound() ;
     }
 
-    public Node getLast() throws NodeNotFound{
+    public Node getLast() throws NodeNotFound {
         if( tail != null ){ 
             return tail ;  
         }
         throw new NodeNotFound() ;
+    }
+
+    public Node removeLast () {
+        if ( head == tail ) {
+            head = tail = null ;
+        }
+        Node temp = head ;
+        while(temp.next.next != null) {
+            temp = temp.next ;
+        }
+        Node last = temp.next ;
+        temp.next = null ;
+        return last ;
     }
 
     public void addNode ( int val ) {
@@ -99,7 +94,7 @@ public class LinkedList {
         return size ;
     }
 
-    public void displayList (){
+    public void displayList () {
         Node temp = head ;
         while(temp != null){
             System.out.print(temp.data + " -> ") ;
