@@ -25,7 +25,7 @@ public class Stack {
             if(tos==-1){
                 l.addFirst(tos) ;
             }else{
-                l.insertNode( tos, val) ;
+                l.addNode(val) ;
             }
         }
         return true ;
