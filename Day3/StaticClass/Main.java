@@ -4,6 +4,10 @@ class First {
     static class Node {
         int a ;
         Node node ;
+        void myfun () {
+            // final static int a = 0 ;
+            System.out.println(a) ;
+        }
     }
 }
 
