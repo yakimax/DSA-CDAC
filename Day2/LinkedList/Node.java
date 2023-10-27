@@ -2,7 +2,7 @@ package Day2.LinkedList;
 
 public class Node {
     public int data ;
-    Node next ;
+    public Node next ;
 
     Node(){}
     Node (int val ){

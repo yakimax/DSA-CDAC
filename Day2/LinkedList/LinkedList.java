@@ -11,9 +11,9 @@ class NodeNotFound extends Exception {
 
 
 public class LinkedList {
-    Node head = null ;
-    Node tail = null ;
-    int size = 0 ;
+    public Node head = null ;
+    public Node tail = null ;
+    public int size = 0 ;
 
     public void addFirst ( int val ) {
         if( head != null ) {
@@ -64,6 +64,22 @@ public class LinkedList {
         return last ;
     }
 
+    public Node removeFirst() {
+        Node rem = null ;
+        if(head == null) {
+            System.out.println("List is Empty");
+            return rem ;
+        }
+        if ( head == tail ) {
+            rem = head ;
+            head = tail = null ; 
+        }else if ( head != null ) {
+            rem = head ;
+            head = head.next ;
+         }
+         return rem ;
+    }
+
     public void addNode ( int val ) {
         if ( head == null ) {
             addFirst(val) ;
@@ -97,7 +113,7 @@ public class LinkedList {
         return size ;
     }
 
-    public void displayList () {
+    public void displayList () { 
         Node temp = head ;
         while(temp != null){
             System.out.print(temp.data + " -> ") ;
@@ -107,4 +123,5 @@ public class LinkedList {
             temp = temp.next ;
         }
     }
+
 }
