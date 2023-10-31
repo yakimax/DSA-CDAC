@@ -6,50 +6,48 @@ class MSort{
 	{
 		if(l<h)
 		{
-			int mid = l+(h-l)/2;
-			mergeSort(arr,l, mid);//Left subproblem
-			mergeSort(arr,mid+1,h);//Right subproblem
-			merge(arr, l, mid, h);
-			
+			int mid = l+(h-l)/2 ;
+			mergeSort(arr,l, mid) ;//Left subproblem
+			mergeSort(arr,mid+1,h) ;//Right subproblem
+			merge(arr, l, mid, h) ;
 		}
 	}
 	
-	static void merge(int arr[], int l, int mid, int h)
+	static void merge ( int arr[] , int l , int mid , int h )
 	{
 		//size of left side element
-		int n1 = mid-l+1;
+		int n1 = mid-l+1 ;
 		//size of right side element
-		int n2 = h-mid;
+		int n2 = h-mid ;
 		
 		//create left sub array of size n1
-		int L[]= new int[n1];
+		int L[]= new int[n1] ;
 		//create right sub array of size n2
-		int R[]= new int[n2];
+		int R[]= new int[n2] ;
 		
 		//Shift array elements to left array
-		for(int i=0;i<n1;i++)
-			L[i]=arr[l+i];
+		for ( int i=0 ; i < n1 ; i++ )
+			L[i]=arr[l+i] ;
 		
 		//Shift array elements to right array
 		for(int j=0;j<n2;j++)
-			R[j]=arr[mid+1+j];
+			R[j]=arr[mid+1+j] ;
 		
-		int i=0,j=0;
-		int k =l;
+		int i=0,j=0 ;
+		int k =l ;
 		while(i<n1 && j<n2)
 		{
 			if(L[i] <= R[j])
 			{
-				arr[k] = L[i];
-				i++;
+				arr[k] = L[i] ;
+				i++ ;
 			}
 			else
 			{
-				arr[k] = R[j];
-				j++;
+				arr[k] = R[j] ;
+				j++ ;
 			}
-			k++;
-			
+			k++ ;
 		}
 		while(i<n1)
 		{
