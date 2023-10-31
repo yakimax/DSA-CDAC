@@ -7,74 +7,163 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body> 
-    <p>
-        class MSort{
-            static void mergeSort(int arr[], int l, int h)
-            {
-                if(l<h)
-                {
-                    <p>int mid = l+(h-l)/2;</p> 
-                    <p> mergeSort(arr,l, mid);//Left subproblem</p>
-                    <p> mergeSort(arr,mid+1,h);//Right subproblem</p>
-                    <p> merge(arr, l, mid, h);</p>
-                    
-                }
-            }
-            
-            static void merge(int arr[], int l, int mid, int h)
-            {
-                //size of left side element
-                int n1 = mid-l+1;
-                //size of right side element
-                int n2 = h-mid;
-                
-                //create left sub array of size n1
-                int L[]= new int[n1];
-                //create right sub array of size n2
-                int R[]= new int[n2];
-                
-                //Shift array elements to left array
-                for(int i=0;i<n1;i++)
-                    L[i]=arr[l+i];
-                
-                //Shift array elements to right array
-                for(int j=0;j<n2;j++)
-                    R[j]=arr[mid+1+j];
-                
-                int i=0,j=0;
-                int k =l;
-                while(i<n1 && j<n2)
-                {
-                    if(L[i] <= R[j])
-                    {
-                        arr[k] = L[i];
-                        i++;
-                    }
-                    else
-                    {
-                        arr[k] = R[j];
-                        j++;
-                    }
-                    k++;
-                    
-                }
-                while(i<n1)
-                {
-                    arr[k] = L[i];
-                    i++;
-                    k++;
-                    
-                }
-                while(j<n2)
-                {
-                    arr[k] = R[j];
-                    j++;
-                    k++;
-                    
-                }
-            }
-    </p>
-    <h1 class="main"> Merge Sort Visualizer </h1>
-    <img src = "./beautify-picture.png" class="img1">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        code {
+            display: block ;
+            background-color: #f8f9fa ;
+            border: 1px solid #ced4da ;
+            border-radius: 5px ;
+            padding: 10px ;
+            overflow-x: auto ;
+            width: 400px ;
+            /* height: 400px ; */
+        }
+
+        .comment {
+            color: #6c757d;
+        }
+
+        .keyword {
+            color: #d73a49;
+        }
+
+        .function {
+            color: #6f42c1;
+        }
+
+        .number {
+            color: #005cc5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="main" style="text-align : center;"> Merge Sort Visualizer </h1>
+
+    <code>
+        <span class="comment">// Java program to perform Merge Sort</span>
+        <br>
+        <span class="keyword">class</span> MSort {
+            <br>
+            <span class="keyword">static void</span> mergeSort(int arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> h) {
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(l &lt; h) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> mid = l + (h - l) / 2 ;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mergeSort(arr, l, mid); <span class="comment">// Left subproblem</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mergeSort(arr, mid + 1, h); <span class="comment">// Right subproblem</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;merge(arr, l, mid, h);
+                    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+            </span>
+
+            <br>
+            <br>
+            <span class="keyword">static void</span> merge(int arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> h) {
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// size of left side element</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> n1 = mid - l + 1;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// size of right side element</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> n2 = h - mid;
+
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// create left sub array of size n1</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> L[] = <span class="keyword">new</span> int[n1];
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// create right sub array of size n2</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> R[] = <span class="keyword">new</span> int[n2];
+
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Shift array elements to left array</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; n1; i++)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L[i] = arr[l + i];
+
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Shift array elements to right array</span>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span> j = 0; j &lt; n2; j++)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R[j] = arr[mid + 1 + j];
+
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> i = 0, j = 0;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span> k = l;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(i &lt; n1 &amp;&amp; j &lt; n2) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(L[i] &lt;= R[j]) {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[k] = L[i];
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;
+                        <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">else</span> {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[k] = R[j];
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;
+                        <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k++;
+                    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(i &                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(i &lt; n1) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[k] = L[i];
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k++;
+                    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(j &lt; n2) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[k] = R[j];
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k++;
+                    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}
+            </span>
+
+            <br>
+             
+        </span>
+    </code>
+ 
+    <!-- <img src = "./beautify-picture.png" class="img1"> -->
 </body>
 </html>

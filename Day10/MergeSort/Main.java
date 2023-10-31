@@ -21,11 +21,11 @@ class MSort{
 		int n2 = h-mid ;
 		
 		//create left sub array of size n1
-		int L[]= new int[n1] ;
+		int L[] = new int[n1] ;
 		//create right sub array of size n2
-		int R[]= new int[n2] ;
-		
-		//Shift array elements to left array
+		int R[] = new int[n2] ;
+
+        //Shift array elements to left array
 		for ( int i=0 ; i < n1 ; i++ )
 			L[i]=arr[l+i] ;
 		
