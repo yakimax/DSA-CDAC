@@ -14,12 +14,13 @@
             background-color: #f8f8f8;
             color: #333;
             line-height: 1.6;
+         }
+        .container{
+            display: flex;
         }
-
         h1 {
             color: #007bff;
-        }
-
+        } 
         code {
             display: block ;
             background-color: #f8f9fa ;
@@ -28,8 +29,7 @@
             padding: 10px ;
             overflow-x: auto ;
             width: 400px ;
-            /* height: 400px ; */
-        }
+         }
 
         .comment {
             color: #6c757d;
@@ -46,12 +46,27 @@
         .number {
             color: #005cc5;
         }
+        .bucket {
+            width: 240px;
+            height: 150px;
+            /* background-color:  ; */
+            border-left: 10px solid black ;
+            border-right: 10px solid black ;
+            border-bottom: 10px solid black ;
+            border-radius: 10px;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            margin: 20px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
 
     <h1 class="main" style="text-align : center;"> Merge Sort Visualizer </h1>
 
+    <div class="container">
     <code>
         <span class="comment">// Java program to perform Merge Sort</span>
         <br>
@@ -158,10 +173,12 @@
                     <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;}
             </span>
-
             <br>
-             
         </span>
     </code>
+        <div class="bucket"> 
+            <p> mergeSort( arr , 0 , 6 ) </p>
+        </div>
+    </div>
 </body>
 </html>

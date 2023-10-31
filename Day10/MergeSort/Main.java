@@ -1,14 +1,14 @@
 package Day10.MergeSort ;
 
 
-class MSort{
+class MSort {
 	static void mergeSort(int arr[], int l, int h)
 	{
 		if(l<h)
 		{
 			int mid = l+(h-l)/2 ;
-			mergeSort(arr,l, mid) ;//Left subproblem
-			mergeSort(arr,mid+1,h) ;//Right subproblem
+			mergeSort(arr,l, mid) ; //Left subproblem
+			mergeSort(arr,mid+1,h) ; //Right subproblem
 			merge(arr, l, mid, h) ;
 		}
 	}
