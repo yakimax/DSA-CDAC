@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body> 
+    <p>
+        class MSort{
+            static void mergeSort(int arr[], int l, int h)
+            {
+                if(l<h)
+                {
+                    <p>int mid = l+(h-l)/2;</p> 
+                    <p> mergeSort(arr,l, mid);//Left subproblem</p>
+                    <p> mergeSort(arr,mid+1,h);//Right subproblem</p>
+                    <p> merge(arr, l, mid, h);</p>
+                    
+                }
+            }
+            
+            static void merge(int arr[], int l, int mid, int h)
+            {
+                //size of left side element
+                int n1 = mid-l+1;
+                //size of right side element
+                int n2 = h-mid;
+                
+                //create left sub array of size n1
+                int L[]= new int[n1];
+                //create right sub array of size n2
+                int R[]= new int[n2];
+                
+                //Shift array elements to left array
+                for(int i=0;i<n1;i++)
+                    L[i]=arr[l+i];
+                
+                //Shift array elements to right array
+                for(int j=0;j<n2;j++)
+                    R[j]=arr[mid+1+j];
+                
+                int i=0,j=0;
+                int k =l;
+                while(i<n1 && j<n2)
+                {
+                    if(L[i] <= R[j])
+                    {
+                        arr[k] = L[i];
+                        i++;
+                    }
+                    else
+                    {
+                        arr[k] = R[j];
+                        j++;
+                    }
+                    k++;
+                    
+                }
+                while(i<n1)
+                {
+                    arr[k] = L[i];
+                    i++;
+                    k++;
+                    
+                }
+                while(j<n2)
+                {
+                    arr[k] = R[j];
+                    j++;
+                    k++;
+                    
+                }
+            }
+    </p>
+    <h1 class="main"> Merge Sort Visualizer </h1>
+    <img src = "./beautify-picture.png" class="img1">
+</body>
+</html>
