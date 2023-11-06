@@ -5,12 +5,9 @@ It is an efficient sorting algorithm for integers or strings with fixed-size key
 
 
 
-Rather than comparing elements directly,
 Radix Sort distributes the elements into buckets based on each digit’s value.
-By repeatedly sorting the elements by their significant digits,
-from the least significant to the most significant,
-Radix Sort achieves the final sorted order.
-
+From the least significant to the most significant,
+ 
 
 
 Step 1: Find the largest element in the array, which is 802.
@@ -29,3 +26,12 @@ Step 3: Sort the elements based on the tens place digits .
 -
 Step 4: Till n th position
 
+
+
+Space complexity - O(b*(N+b)) 
+Time complexity - O(N+b)
+
+
+counting Sort
+
+step 1 - 
