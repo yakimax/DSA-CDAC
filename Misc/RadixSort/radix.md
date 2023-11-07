@@ -35,11 +35,11 @@ once for each significant place.
 
 # counting Sort
 
-step 1 - Store the frequency of LSB's at index (base)array .
+
+step 1 - Store the frequency of RSB's at index (base)array .
 step 2 - Add all previous frequencies to the next array element .
 step 3 - Create an Output array of size similar to Original array .
 step 4 - Decrement the count array element and update the value of output array .
-
 
 
 

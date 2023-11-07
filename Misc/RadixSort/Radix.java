@@ -16,21 +16,19 @@ class Radix {
      {
         int output[] = new int[n] ;
         int i ;
-        int count[] = new int[10] ;
+        int count[] = new int[10] ; // equal to base of the number system
         Arrays.fill(count, 0) ;
  
          for (i = 0; i < n; i++)
-            count[(arr[i] / exp) % 10]++;
-            // { }
-
+            count[(arr[i] / exp) % 10]++ ;
 
          for (i = 1; i < 10; i++)
-            count[i] += count[i - 1];
+            count[i] += count[i - 1] ;
  
          for (i = n - 1; i >= 0; i--) {
-            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-            count[(arr[i] / exp) % 10]--;
-        }
+            output[count[(arr[i] / exp) % 10] - 1] = arr[i] ;
+            count[(arr[i] / exp) % 10]-- ;
+         }
  
          for (i = 0; i < n; i++)
             arr[i] = output[i];
