@@ -1,18 +1,19 @@
 package Day10.MergeSort ;
 
-
 class MSort {
-	static void mergeSort(int arr[], int l, int h)
-	{
-		if(l<h)
-		{
-			int mid = l+(h-l)/2 ;
-			mergeSort(arr,l, mid) ; //Left subproblem
-			mergeSort(arr,mid+1,h) ; //Right subproblem
-			merge(arr, l, mid, h) ;
-		}
-	}
 	
+	static void mergeSort(int arr[], int l, int r)
+	{
+		if(l==r)
+		{
+			return ;
+		}
+			int mid = l+(r-l)/2 ;
+			mergeSort(arr,l, mid) ; //Left subproblem
+			mergeSort(arr,mid+1,r) ; //Right subproblem
+			merge(arr, l, mid, r) ;
+	}
+
 	static void merge ( int arr[] , int l , int mid , int h )
 	{
 		//size of left side element
@@ -54,7 +55,6 @@ class MSort {
 			arr[k] = L[i];
 			i++;
 			k++;
-			
 		}
 		while(j<n2)
 		{
@@ -72,17 +72,14 @@ class MSort {
 			System.out.println(arr[i]+" ");
 		}
 	}
-	
 	public static void main(String args[])
-	{
-		
-		int arr[]={23, 56, 34, 89, 34, 21, 78 };
-		int n=arr.length;
-		System.out.println("Before Sorting:");
-		display(arr);
-		mergeSort(arr,0,n-1);
-		System.out.println("After Sorting:");
-		display(arr);
-		
+	{ 		
+		int arr[] = { 23, 56, 34, 89, 34, 21, 78 } ;
+		int n=arr.length ;
+		System.out.println("Before Sorting:") ;
+		display(arr) ;
+		mergeSort(arr,0,n-1) ;
+		System.out.println("After Sorting:") ;
+		display(arr) ;
 	}
 }
